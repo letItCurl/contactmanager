@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import '@fortawesome/fontawesome-free';
+
+ @media (max-width: 430px) { 
+    #contact-card {
+        flex-direction: column;
+    }
+    #contact-actions{
+        margin: auto;
+    }
+ }

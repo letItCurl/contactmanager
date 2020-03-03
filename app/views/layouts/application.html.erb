@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "navbar"%>
+    <main class="pt-5">
+      <div class="container">
+        <div class="row">
+          <%= render "filter"%>
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header"><strong>All Contacts</strong></div>
+                <%= yield %>
+                <%= render "pagination"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
