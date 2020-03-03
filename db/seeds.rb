@@ -27,8 +27,8 @@ contacts = []
 nb_of_contacts.times do |i|
     new_contact = {
         name: Faker::Name.name,
-        company: Faker::Internet.email,
-        email: Faker::Company.name,
+        company: Faker::Company.name,
+        email: Faker::Internet.email,
         phone: Faker::PhoneNumber.cell_phone,
         address: "#{Faker::Address.street_address} #{Faker::Address.zip} #{Faker::Address.city}",
         group_id: groups_ids[Random.rand(0...groups_count)]
