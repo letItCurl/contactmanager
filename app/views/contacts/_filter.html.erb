@@ -1,8 +1,14 @@
 <div class="col-md-3">
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active">All Contact <span class="badge badge-warning badge-pill">14</span></a>
-    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Family <span class="badge badge-pill badge-warning">4</span></a>
-    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Friends <span class="badge badge-pill badge-warning">3</span></a>
-    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Other <span class="badge badge-pill badge-warning">3</span></a>
+  <div class="list-group shadow-sm">
+
+    <%= link_to contacts_path, class: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center' do %>
+      All Contact <span class="badge badge-warning badge-pill"><%= Contact.all.count %></span>
+    <%end%>
+
+    <% Group.all.each do |group| %>
+      <%= link_to contacts_path(group_id: group.id), class: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center' do %>
+        <%=group.name%><span class="badge badge-warning badge-pill"><%=group.contacts.count%></span>
+      <%end%>
+    <% end %>
   </div>
 </div><!-- /.col-md-3 -->
