@@ -2,8 +2,13 @@
   <div class="alert alert-warning">
     <strong>Contacts not found</strong>
   </div>
+<%else%>
+  <div class="card-header"><strong>All Contacts</strong></div>
+    <div>
+      <%= render @contacts %>
+    </div>
+  <div class="mx-auto">
+    <%= paginate @contacts %>   
+  </div>
 <%end%>
-<div>
-  <%= render @contacts %>
-</div>
-<%= paginate @contacts %>    
+ 
