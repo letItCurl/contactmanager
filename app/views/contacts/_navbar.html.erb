@@ -8,7 +8,11 @@
     <!-- /.navbar-header -->
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="form.html" class="btn btn-outline-primary">Add New</a></li>
+        <li class="nav-item">
+          <%= link_to new_contact_path, class: "btn btn-outline-primary" do%>
+            Add New
+          <%end%>
+        </li>
       </ul>
     </div>
   </div>

@@ -3,12 +3,15 @@
     <strong>Contacts not found</strong>
   </div>
 <%else%>
-  <div class="card-header"><strong>All Contacts</strong></div>
-    <div>
+    <% content_for :title do%>
+      <%=params[:group_id] == nil || params[:group_id].empty? ? 'All Contacts' : Group.find_by(id: params[:group_id].to_i).name%>
+    <%end%>
+    <% content_for :content do%>
       <%= render @contacts %>
-    </div>
-  <div class="mx-auto">
-    <%= paginate @contacts %>   
-  </div>
+    <%end%>
+    <% content_for :footer do%>
+      <%= paginate @contacts %>
+    <%end%>
+    <%= render template: 'layouts/listcard'%>
 <%end%>
  
