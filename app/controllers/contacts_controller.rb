@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    puts params.permit(:page)
+    @contacts = Contact.order(:name).page(params[:page])
   end
+
 end
