@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -36,7 +36,11 @@ gem 'font_awesome5_rails'
 
 gem 'kaminari', '~> 1.1.1'
 
-gem 'shrine', '~> 3.2', '>= 3.2.1'
+gem 'shrine', '~> 2.6', '>= 2.6.1'
+
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+
+gem 'fastimage', '~> 2.1', '>= 2.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

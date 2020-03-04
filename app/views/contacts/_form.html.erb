@@ -56,15 +56,27 @@
     </div>
 
     <div class="col-md-3">
-        <%= f.hidden_field :image, value: @contact.cached_image_data %>
-        <%= f.file_field :image %>
+        <%= f.hidden_field :image, value: contact.cached_image_data %>
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+            <% if contact.new_record? %>
+            
+            <% elsif contact.image_url == nil%>
+                <%= image_tag contact.gravatar, style: "width: 150px;" %>
+            <%else%>
+                <%= image_tag contact.image_url, style: "width: 150px;" %>
+            <%end%>
+            <div class="mt-2">
+                <%= f.file_field :image %>
+                <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
+            </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-8">
             <div class="row">
                 <div class="d-flex justify-content-center m-2">
-                    <%= f.submit @contact.new_record? ? "Save" : "Update", class:"btn btn-primary mx-2 mt-2" %>
+                    <%= f.submit contact.new_record? ? "Save" : "Update", class:"btn btn-primary mx-2 mt-2" %>
                     <a href="#" class="btn btn-outline-secondary mx-2 mt-2">Cancel</a>
                 </div>
             </div>

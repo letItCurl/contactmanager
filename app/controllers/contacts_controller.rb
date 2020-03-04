@@ -27,9 +27,6 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    p "======"
-    p contact_params.inspect 
-    p "======"
     if @contact.update(contact_params)
       flash[:success] = "Contact was successfully updated"
       redirect_to contacts_path
