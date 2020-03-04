@@ -1,78 +1,62 @@
-<form class="row m-2" action="/contacts/create" method="post">
+<%= form_for(@contact, url: @contact.new_record? ? contacts_create_path : update_contact_path(@contact.id)) do |f|%>
+    <% if contact.errors.any?%>
+        <div class="row">
+            <div class="col-md-12">
+                <% contact.errors.full_messages.each do |message|%>
+                    <p><%=message%></p>
+                <%end%>
+            </div>
+        </div>
+    <%end%>
 
-        <% if @contact.errors.any?%>
-            <div class="row">
-                <div class="col-md-12">
-                    <%@contact.errors.full_messages.each do |message|%>
-                        <p><%=message%></p>
-                    <%end%>
-                </div>
+    <div class="col-md-9">
+        <div class="form-group row">
+            <%= f.label :name, class:"col-md-3 col-form-label"%>
+            <div class="col-md-8">
+                <%= f.text_field :name, class:"form-control" %>
             </div>
-        <%end%>
-        <div class="col-md-9">
-            <div class="form-group row">
-                <label for="name" class="col-md-3 col-form-label">Name</label>
-                <div class="col-md-8">
-                    <input type="text" name="contact[name]" id="name" class="form-control">
-                </div>
-            </div>
+        </div>
 
-            <div class="form-group row">
-                <label for="company" class="col-md-3 col-form-label">Company</label>
-                <div class="col-md-8">
-                    <input type="text" name="contact[company]" id="company" class="form-control">
-                </div>
+        <div class="form-group row">
+            <%= f.label :company, class:"col-md-3 col-form-label"%>
+            <div class="col-md-8">
+                <%= f.text_field :company, class:"form-control" %>
             </div>
+        </div>
 
-            <div class="form-group row">
-                <label for="email" class="col-md-3 col-form-label">Email</label>
-                <div class="col-md-8">
-                    <input type="text" name="contact[email]" id="email" class="form-control">
-                </div>
+        <div class="form-group row">
+            <%= f.label :email, class:"col-md-3 col-form-label"%>
+            <div class="col-md-8">
+                <%= f.text_field :email, class:"form-control" %>
             </div>
+        </div>
 
-            <div class="form-group row">
-                <label for="phone" class="col-md-3 col-form-label">Phone</label>
-                <div class="col-md-8">
-                    <input type="text" name="contact[phone]" id="phone" class="form-control">
-                </div>
+        <div class="form-group row">
+            <%= f.label :phone, class:"col-md-3 col-form-label"%>
+            <div class="col-md-8">
+                <%= f.text_field :phone, class:"form-control" %>
             </div>
+        </div>
+        <div class="form-group row">
+            <%= f.label :address, class:"col-md-3 col-form-label"%>
+            <div class="col-md-8">
+                <%= f.text_area :address, class:"form-control", row:"3" %>
+            </div>
+        </div>
 
-            <div class="form-group row">
-                <label for="name" class="col-md-3 col-form-label">Address</label>
-                <div class="col-md-8">
-                    <textarea name="contact[address]" id="address" rows="3" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="form-group row">
-            <label for="group" class="col-md-3 col-form-label">Group</label>
+        <div class="form-group row">
+            <%= f.label :group_id, class:"col-md-3 col-form-label"%>
             <div class="col-md-5">
-                <select name="contact[group]" id="group" class="form-control">
-                <option value="">Select group</option>
-                <option value="1">Family</option>
-                <option value="2">Friend</option>
-                <option value="3">Other</option>
-                </select>
+                <%= f.collection_select :group_id, Group.all, :id, :name, {prompt: "Select group"}, class: "form-control" %>
             </div>
             <div class="col-md-3">
                 <a href="#" id="add-group-btn" class="btn btn-outline-secondary btn-block">Add Group</a>
             </div>
-            </div>
-            <div class="form-group row" id="add-new-group" style="display: none;">
-            <div class="offset-md-3 col-md-8">
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" name="contact[group_id]" placeholder="Enter group name" aria-label="Enter group name" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                    <i class="fa fa-check"></i>
-                    </button>
-                </div>
-                </div>
-            </div>
-            </div>
         </div>
-        <div class="col-md-3">
-            <div class="fileinput fileinput-new" data-provides="fileinput">
+    </div>
+    
+    <div class="col-md-3">
+        <div class="fileinput fileinput-new" data-provides="fileinput">
             <div class="fileinput-new img-thumbnail" style="width: 150px; height: 150px;">
                 <img src="http://via.placeholder.com/150x150" alt="...">
             </div>
@@ -86,6 +70,17 @@
                 </span>
                 <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="d-flex justify-content-center m-2">
+                    <%= f.submit @contact.new_record? ? "Save" : "Update", class:"btn btn-primary mx-2 mt-2" %>
+                    <a href="#" class="btn btn-outline-secondary mx-2 mt-2">Cancel</a>
+                </div>
             </div>
         </div>
+    </div>
+<%end%>
 

@@ -17,9 +17,9 @@
   </div>
   <div width="130" class="middle ml-auto" id="contact-actions">
     <div>
-      <a href="#" class="btn btn-outline-secondary btn-circle btn-xs" title="Edit">
+      <%= link_to edit_contact_path(contact), class: "btn btn-outline-secondary btn-circle btn-xs", title: "Edit" do%>
         <i class="fa fa-edit"></i>
-      </a>
+      <%end%>
       <a href="#" class="btn btn-outline-danger btn-circle btn-xs" title="Delete">
         <i class="fa fa-times"></i>
       </a>

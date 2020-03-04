@@ -16,8 +16,8 @@
         <div class="row">
           <%= render "filter"%>
           <div class="col-md-9">
+            <%= render "messages" if !flash.empty?%>
             <div class="card">
-              <%= render "messages" if !flash.empty?%>
               <%= yield %>
             </div>
           </div>
