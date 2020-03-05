@@ -27,13 +27,17 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
+
     if @contact.update(contact_params)
       flash[:success] = "Contact was successfully updated"
+      if @contact.valid?
+        @contact.image_derivatives!
+        @contact.save
+      end
       redirect_to contacts_path
     else
       render 'edit'
     end
-
   end
 
 
