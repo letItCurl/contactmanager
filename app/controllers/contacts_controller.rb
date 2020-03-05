@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      @contact.image_derivatives!
       flash[:success] = "Contact was successfully created"
       redirect_to contacts_path
     else
@@ -28,20 +29,9 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
 
-    p "===================="
-    p @contact.image.original_filename
-    p "===================="
-    p params[:contact][:image].original_filename
-    p "===================="
-    p params[:contact][:image].original_filename != @contact.image.original_filename
-    p "===================="
-
     if @contact.update(contact_params)
       flash[:success] = "Contact was successfully updated"
-      if @contact.valid?
-        @contact.image_derivatives! if params[:contact][:image].original_filename != @contact.image.original_filename
-        @contact.save
-      end
+      @contact.image_derivatives! if params[:contact][:image].original_filename != @contact.image.original_filename
       redirect_to contacts_path
     else
       render 'edit'
