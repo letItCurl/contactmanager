@@ -4,7 +4,7 @@ class Contact < ApplicationRecord
   validates :name, :email, :group_id, presence: true
   validates :name, length: {minimum: 2}
 
-  include ImageUploader::Attachment(:image) # adds an `image` virtual attribute
+  include ImageUploader::Attachment(:image)
 
   def gravatar
     hash = Digest::MD5.hexdigest(email.downcase)

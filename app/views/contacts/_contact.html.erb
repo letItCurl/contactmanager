@@ -3,7 +3,7 @@
     <div class="media">
       <div class="mr-3">
         <a href="#">
-          <%= image_tag contact.gravatar, class: "rounded float-left"%>
+          <%= image_tag contact.image === nil ? contact.gravatar : contact.image_url(:small) , class: "rounded float-left"%>
         </a>
       </div>
       <div class="media-body">
@@ -25,4 +25,5 @@
       </a>
     </div>
   </div>
+  <%= contact.image === nil ? "nan" : contact.image_data %>
 </div>
