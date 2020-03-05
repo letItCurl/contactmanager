@@ -63,7 +63,7 @@
             <% elsif contact.image_url == nil%>
                 <%= image_tag contact.gravatar, style: "width: 150px;" %>
             <%else%>
-                <%= image_tag contact.image_url, style: "width: 150px;" %>
+                <%= image_tag contact.image_url(:small), style: "width: 150px;" %>
             <%end%>
             <div class="mt-2">
                 <%= f.file_field :image %>
