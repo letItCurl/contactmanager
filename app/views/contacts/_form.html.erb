@@ -58,12 +58,8 @@
     <div class="col-md-3">
         <%= f.hidden_field :image, value: contact.cached_image_data %>
         <div class="fileinput fileinput-new" data-provides="fileinput">
-            <% if contact.new_record? %>
-            
-            <% elsif contact.image_url == nil%>
-                <%= image_tag contact.gravatar, style: "width: 150px;" %>
-            <%else%>
-                <%= image_tag contact.image_url, style: "width: 150px;" %>
+            <% if !contact.new_record?%>
+                <%= image_tag contact.image === nil ? "DefaultProfilePic150x150" : contact.image_url(:medium) , class: "rounded float-left"%>            
             <%end%>
             <div class="mt-2">
                 <%= f.file_field :image %>

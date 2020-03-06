@@ -13,7 +13,6 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.inspect
     @contact.image_derivatives! if @contact.image_data
     if @contact.save
       flash[:success] = "Contact was successfully created"
