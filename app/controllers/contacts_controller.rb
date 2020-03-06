@@ -5,9 +5,14 @@ class ContactsController < ApplicationController
   def index
     session[:selected_group_id] = params[:group_id]
     if params[:group_id] && !params[:group_id].empty?
-      @contacts = Contact.order(:name).where(group_id: params[:group_id]).page(params[:page])
+      group = Group.find(params[:group_id])
+      if params[:term] && !params[:term].empty?
+        @contacts = group.contacts.where('name ILIKE ?', "%#{params[:term]}%").order(:name).page(params[:page])
+      else
+        @contacts = group.contacts.order(:name).page(params[:page])
+      end
     else
-      @contacts = Contact.order(:name).page(params[:page])
+      @contacts = Contact.where('name ILIKE ?', "%#{params[:term]}%").order(:name).page(params[:page])
     end
   end
 
