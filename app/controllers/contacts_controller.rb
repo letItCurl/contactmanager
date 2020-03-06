@@ -29,10 +29,11 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    prev_image =  @contact.image.original_filename
     if @contact.update(contact_params)
-      @contact.image_derivatives! if prev_image != params[:contact][:image].original_filename
-      @contact.save
+      if params[:contact][:image] != ""
+        @contact.image_derivatives! 
+        @contact.save 
+      end
       flash[:success] = "Contact was successfully updated"
       redirect_to contacts_path
     else
