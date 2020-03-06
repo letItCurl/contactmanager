@@ -8,74 +8,73 @@
             </div>
         </div>
     <%end%>
-
-    <div class="col-md-9">
-        <div class="form-group row">
-            <%= f.label :name, class:"col-md-3 col-form-label"%>
-            <div class="col-md-8">
-                <%= f.text_field :name, class:"form-control" %>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <%= f.label :company, class:"col-md-3 col-form-label"%>
-            <div class="col-md-8">
-                <%= f.text_field :company, class:"form-control" %>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <%= f.label :email, class:"col-md-3 col-form-label"%>
-            <div class="col-md-8">
-                <%= f.text_field :email, class:"form-control" %>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <%= f.label :phone, class:"col-md-3 col-form-label"%>
-            <div class="col-md-8">
-                <%= f.text_field :phone, class:"form-control" %>
-            </div>
-        </div>
-        <div class="form-group row">
-            <%= f.label :address, class:"col-md-3 col-form-label"%>
-            <div class="col-md-8">
-                <%= f.text_area :address, class:"form-control", row:"3" %>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <%= f.label :group_id, class:"col-md-3 col-form-label"%>
-            <div class="col-md-5">
-                <%= f.collection_select :group_id, Group.all, :id, :name, {prompt: "Select group"}, class: "form-control" %>
-            </div>
-            <div class="col-md-3">
-                <a href="#" id="add-group-btn" class="btn btn-outline-secondary btn-block">Add Group</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <%= f.hidden_field :image, value: contact.cached_image_data %>
-        <div class="fileinput fileinput-new" data-provides="fileinput">
-            <% if !contact.new_record?%>
-                <%= image_tag contact.image === nil ? "DefaultProfilePic150x150" : contact.image_url(:medium) , class: "rounded float-left"%>            
-            <%end%>
-            <div class="mt-2">
-                <%= f.file_field :image %>
-                <a href="#" class="btn btn-outline-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8">
-            <div class="row">
-                <div class="d-flex justify-content-center m-2">
-                    <%= f.submit contact.new_record? ? "Save" : "Update", class:"btn btn-primary mx-2 mt-2" %>
-                    <a href="#" class="btn btn-outline-secondary mx-2 mt-2">Cancel</a>
+    <div class="d-flex justify-content-around" id="responsive-from">
+        <div class="col-md-9 mt-2">
+            <div class="form-group row">
+                <%= f.label :name, class:"col-md-3 col-form-label"%>
+                <div class="col-md-8">
+                    <%= f.text_field :name, class:"form-control" %>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <%= f.label :company, class:"col-md-3 col-form-label"%>
+                <div class="col-md-8">
+                    <%= f.text_field :company, class:"form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <%= f.label :email, class:"col-md-3 col-form-label"%>
+                <div class="col-md-8">
+                    <%= f.text_field :email, class:"form-control" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <%= f.label :phone, class:"col-md-3 col-form-label"%>
+                <div class="col-md-8">
+                    <%= f.text_field :phone, class:"form-control" %>
+                </div>
+            </div>
+            <div class="form-group row">
+                <%= f.label :address, class:"col-md-3 col-form-label"%>
+                <div class="col-md-8">
+                    <%= f.text_area :address, class:"form-control", row:"3" %>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <%= f.label :group_id, class:"col-md-3 col-form-label"%>
+                <div class="col-md-5">
+                    <%= f.collection_select :group_id, Group.all, :id, :name, {prompt: "Select group"}, class: "form-control" %>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" id="add-group-btn" class="btn btn-outline-secondary btn-block mt-2">Add Group</a>
+                </div>
+            </div>
+            <div class="form-group row">
+                <%= f.hidden_field :image, value: contact.cached_image_data %>
+                <%= f.label :image, class:"col-md-3 col-form-label"%>
+                <div class="fileinput fileinput-new col-md-5" data-provides="fileinput">
+                    <div class="mt-2">
+                        <%= f.file_field :image %>
+                    </div>
+                    <a href="#" class="btn btn-outline-secondary fileinput-exists mt-2" data-dismiss="fileinput">Remove</a>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3 col-form-label">Acions</div>
+                <div class="col-md-5">
+                    <div class="mr-2">
+                        <%= f.submit contact.new_record? ? "Save" : "Update", class:"btn btn-primary" %>
+                        <a href="#" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 mx-auto">
+            <%= image_tag contact.image === nil ? "DefaultProfilePic150x150" : contact.image_url(:medium) , class: "rounded m-auto" %>
         </div>
     </div>
 <%end%>
