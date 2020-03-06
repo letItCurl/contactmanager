@@ -6,6 +6,7 @@ class ImageUploader < Shrine
     #plugin :validation_helpers
     #plugin :remove_invalid
     plugin :derivatives
+    plugin :pretty_location, namespace: "/"
     #plugin :remove_attachment
 =begin
     Attacher.validate do
@@ -21,4 +22,10 @@ class ImageUploader < Shrine
           large:  magick.resize_to_limit!(500, 500),
         }
     end
+
+    def generate_location(io, record: nil, **context)
+        identifier = record.email if record.is_a?(Contact)
+        pretty_location(io, record: record, identifier: identifier, **context)
+    end
+
 end
