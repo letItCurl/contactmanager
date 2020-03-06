@@ -38,12 +38,9 @@ class ContactsController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
-
   private
-
   def contact_params
     params.require(:contact).permit(:name, :email, :company, :address, :phone, :group_id, :image)
   end
