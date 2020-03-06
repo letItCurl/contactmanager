@@ -20,7 +20,7 @@
       <%= link_to edit_contact_path(contact), class: "btn btn-outline-secondary btn-circle btn-xs", title: "Edit" do%>
         <i class="fa fa-edit"></i>
       <%end%>
-      <%= link_to destroy_contact_path(contact), method: :delete, class: "btn btn-outline-danger btn-circle btn-xs", title: "Delete", data: {confirm: "Are you sure ?"} do%>
+      <%= link_to contact_path(contact), method: :delete, class: "btn btn-outline-danger btn-circle btn-xs", title: "Delete", data: {confirm: "Are you sure ?"} do%>
         <i class="fa fa-times"></i>
       <%end%>
     </div>

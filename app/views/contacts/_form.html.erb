@@ -1,4 +1,4 @@
-<%= form_for @contact, url: @contact.new_record? ? contacts_create_path : update_contact_path(@contact.id) do |f|%>
+<%= form_for @contact do |f|%>
     <% if contact.errors.any?%>
         <div class="row">
             <div class="col-md-12">
