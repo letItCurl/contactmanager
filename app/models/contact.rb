@@ -10,20 +10,11 @@ class Contact < ApplicationRecord
     hash = Digest::MD5.hexdigest(email.downcase)
     "https://picsum.photos/seed/#{hash}/100/100"
   end
-
-  def self.search(term)
-    if term && !term.empty?
-      where('name ILIKE ?', "%#{term}%")
-    else
-      all
-    end
+  
+  scope :search, -> (term) do 
+    where('name ILIKE :term OR company ILIKE :term OR email ILIKE :term', term: "%#{term}%") if term.present? 
   end
 
-  def self.by_group(group_id)
-    if group_id && !group_id.empty?
-      where(group_id: group_id)
-    else
-      all
-    end
-  end
+  scope :by_group, -> (group_id) { where(group_id: group_id) if group_id.present? }
+
 end
