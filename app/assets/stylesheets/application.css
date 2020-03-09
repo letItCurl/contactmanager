@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  */
  @import "bootstrap";
  @import '@fortawesome/fontawesome-free';
@@ -28,5 +29,11 @@
     #responsive-from{
         flex-direction: column-reverse;
     }
+ }
+
+ .ui-autocomplete {
+     position: relative;
+     cursor: default;
+     z-index: 9999 !important;
  }
 

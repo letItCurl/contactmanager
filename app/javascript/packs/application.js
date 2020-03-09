@@ -18,3 +18,15 @@ require("channels")
 import "@fortawesome/fontawesome-free/js/all";
 require("popper.js")
 require("jquery")
+require("jquery-ui")
+
+$(function() {
+    $('#term').autocomplete({
+        source: "/contacts/autocomplete",
+        minLength: 1,
+        select: function (event, ui) {
+            $('#term').val(ui.item.value)
+        }
+    })
+   
+})

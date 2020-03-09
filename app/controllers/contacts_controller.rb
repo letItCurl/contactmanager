@@ -44,6 +44,11 @@ class ContactsController < ApplicationController
     redirect_to contacts_path
   end
 
+  def autocomplete
+    @contacts = Contact.search(params[:term]).order(:name).page(params[:page])
+    render json: @contacts.map { |contact| {id: contact.id, value: contact.name}}
+  end
+
   private
   def contact_params
     params.require(:contact).permit(:name, :email, :company, :address, :phone, :group_id, :image)
