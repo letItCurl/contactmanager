@@ -11,4 +11,19 @@ class Contact < ApplicationRecord
     "https://picsum.photos/seed/#{hash}/100/100"
   end
 
+  def self.search(term)
+    if term && !term.empty?
+      where('name ILIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
+
+  def self.by_group(group_id)
+    if group_id && !group_id.empty?
+      where(group_id: group_id)
+    else
+      all
+    end
+  end
 end
