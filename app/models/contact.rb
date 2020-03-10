@@ -12,6 +12,7 @@ class Contact < ApplicationRecord
   end
   
   scope :search, -> (term) do 
+    #refract: ILIKE for POSTGRESQL 
     where('name ILIKE :term OR company ILIKE :term OR email ILIKE :term', term: "%#{term}%") if term.present? 
   end
 
