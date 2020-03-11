@@ -16,11 +16,12 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "@fortawesome/fontawesome-free/js/all";
-require("popper.js")
-require("jquery")
-require("jquery-ui")
+require("popper.js");
+require("jquery");
+require("jquery-ui");
 
-$(function() {
+jQuery(function($){
+  var autoComplete = function() {
     $('#term').autocomplete({
         source: "/contacts/autocomplete",
         minLength: 1,
@@ -29,14 +30,20 @@ $(function() {
             //$(this).closest('form').submit()
         }
     })
+  }
+
+  var groupBtn = function() {
+      $("#add-new-group").hide();
+      $('#add-group-btn').click(function () {      
+        $("#add-new-group").slideToggle(function() {
+          $('#new_group').focus();
+        });
+        return false;
+      });
+  }
+
+  document.addEventListener('turbolinks:load', groupBtn)
+  document.addEventListener('turbolinks:load', autoComplete)
+
 })
 
-$(function() {
-    $("#add-new-group").hide();
-    $('#add-group-btn').click(function () {      
-      $("#add-new-group").slideToggle(function() {
-        $('#new_group').focus();
-      });
-      return false;
-    });
-})
