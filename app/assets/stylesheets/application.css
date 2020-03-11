@@ -32,6 +32,9 @@
     #responsive-nav{
         max-width: 82%;
     }
+    #responsive-pipe{
+        display: none;
+    }
  }
 
  .ui-autocomplete {

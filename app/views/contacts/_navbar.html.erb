@@ -1,7 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <div class="container">
     <%= link_to "My contacts", root_path, class: "navbar-brand text-uppercase" %>
-
     
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,15 +9,18 @@
     <!-- /.navbar-header -->
     
     <div class="collapse navbar-collapse " id="navbarCollapse">
+    <% if user_signed_in? %>
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+          <a class="nav-link" id="responsive-pipe">|</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">All Contacts </a>
         </li>
       </ul>
-      
       <ul class="navbar-nav ml-lg-2 my-sm-2">
         <li class="nav-item">
           <div class="dropdown">
@@ -26,13 +28,23 @@
               profile name
             </a>
             <div class="dropdown-menu mb-2" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Profil</a>
-              <a class="dropdown-item" href="#">Logout</a>
+              <%= link_to 'Profil', edit_user_registration_path,class:"dropdown-item"%>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete,class:"dropdown-item"%>
             </div>
           </div>
         </li>
       </ul>
       <%= render "layouts/search_form"%>
+    <%else%>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Register', new_user_registration_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Login', new_user_session_path, class:"nav-link"%>
+        </li>
+      </ul>
+    <%end%>
     </div>
   </div>
 </nav>
