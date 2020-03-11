@@ -31,7 +31,7 @@ jQuery(function($){
         }
     })
   }
-
+  
   var groupBtn = function() {
       $("#add-new-group").hide();
       $('#add-group-btn').click(function () {      

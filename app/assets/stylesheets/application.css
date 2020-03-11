@@ -37,3 +37,8 @@
      z-index: 9999 !important;
  }
 
+ .turbolinks-progress-bar {
+    height: 7px;
+    background: blueviolet;
+ }
+
