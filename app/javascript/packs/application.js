@@ -19,6 +19,7 @@ import "@fortawesome/fontawesome-free/js/all";
 require("popper.js");
 require("jquery");
 require("jquery-ui");
+require("bootstrap");
 
 jQuery(function($){
   var autoComplete = function() {
