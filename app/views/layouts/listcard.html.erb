@@ -1,5 +1,11 @@
-<div class="card-header">
-    <strong><%= yield(:title)%></strong>
+<div class="card-header d-flex justify-content-between">
+    <strong class="my-2"><%= yield(:title)%></strong>
+    <%if request.env['PATH_INFO'] != '/contacts/new'%>
+        <% attr = session[:selected_group_id] ? { group_id: session[:selected_group_id]} : {}%>
+            <%= link_to new_contact_path(attr), class: "btn btn-outline-primary my-auto" do%>
+                Add New
+        <%end%>
+    <%end%>
 </div>
 <div>
     <%= yield(:content) %>

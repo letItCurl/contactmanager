@@ -11,18 +11,13 @@
       <%= render "layouts/search_form"%>
       <ul class="navbar-nav ml-2">
         <li class="nav-item">
-          <% attr = session[:selected_group_id] ? { group_id: session[:selected_group_id]} : {}%>
-          <%= link_to new_contact_path(attr), class: "btn btn-outline-primary" do%>
-            Add New
-          <%end%>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
+              profile name
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Profil</a>
+              <a class="dropdown-item" href="#">Logout</a>
             </div>
           </div>
         </li>

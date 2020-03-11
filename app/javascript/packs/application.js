@@ -57,9 +57,16 @@ jQuery(function($){
             newGroup.next('.text-danger').remove()
           }
           var newOption = $('<option/>').attr('value', group.id).attr('selected', true).text(group.name)
+          var firstLinkBreak = '<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" href="#">'
+          var lastLinkBreak = '<span class="badge badge-warning badge-pill">0</span></a>'
           $('#contact_group_id').append(newOption)
           $('#new_group').val("")
-          //$("#add-new-group").hide(200)
+          $('#filter-location').find('.list-group-item.active').last().removeClass("active")
+          $('#filter-location')
+            .find('.list-group-item')
+            .last()
+            .after(firstLinkBreak + group.name + lastLinkBreak)
+          $("#add-new-group").slideUp(200)
         },
         error: function(xhr){
           var errors = xhr.responseJSON
