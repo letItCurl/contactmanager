@@ -32,7 +32,7 @@ jQuery(function($){
     })
   }
   
-  var groupBtn = function() {
+  var showGroupBtn = function() {
       $("#add-new-group").hide();
       $('#add-group-btn').click(function () {      
         $("#add-new-group").slideToggle(function() {
@@ -41,9 +41,40 @@ jQuery(function($){
         return false;
       });
   }
-
-  document.addEventListener('turbolinks:load', groupBtn)
+  var sendGroupBtn = function() {
+    $('#save-group-btn').click(function (event) { 
+      event.preventDefault()
+      var newGroup = $('#add-new-group').find('.input-group')
+      $.ajax({
+        url: "/groups/create",
+        method: "post",
+        data: { 
+          group: {name: $('#new_group').val()} 
+        },
+        success: function(group){
+          if (group.id != null) {
+            newGroup.next('.text-danger').remove()
+          }
+          var newOption = $('<option/>').attr('value', group.id).attr('selected', true).text(group.name)
+          $('#contact_group_id').append(newOption)
+          $('#new_group').val("")
+          //$("#add-new-group").hide(200)
+        },
+        error: function(xhr){
+          var errors = xhr.responseJSON
+          var error = errors.join(" ,")
+          if (error) {
+            newGroup.next('.text-danger').detach()
+            newGroup.after('<p class="text-danger">'+error+'</p>')
+          }
+        }
+      })
+    })
+  }
+  
+  document.addEventListener('turbolinks:load', showGroupBtn)
   document.addEventListener('turbolinks:load', autoComplete)
+  document.addEventListener('turbolinks:load', sendGroupBtn)
 
 })
 
