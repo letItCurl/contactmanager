@@ -1,5 +1,5 @@
-<%= form_tag contacts_path, class: "form-inline ml-auto mt-2 mt-md-0", role: "Search", method: 'get'  do %>
-    <%= text_field_tag :term, params[:term], class: "form-control mr-sm-2", type: "text", placeholder: "Search", autocomplete: "off"%>
+<%= form_tag contacts_path, class: "form-inline mt-md-0 mt-sm-2 ml-auto", role: "Search", method: 'get'  do %>
+    <%= text_field_tag :term, params[:term], class: "form-control mr-sm-2",id: 'responsive-nav' , type: "text", placeholder: "Search", autocomplete: "off"%>
     <%= hidden_field_tag :group_id, params[:group_id]%>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button class="btn btn-outline-success ml-auto pl-sm-2" type="submit">Search</button>
 <% end %>
