@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   post 'groups/create'
   #get 'contacts/index', as: 'contacts'
   #get 'contacts/new', as: 'new_contact'

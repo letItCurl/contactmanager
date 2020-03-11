@@ -44,6 +44,8 @@ gem 'fastimage', '~> 2.1', '>= 2.1.7'
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
+gem 'devise', '~> 4.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
