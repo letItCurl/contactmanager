@@ -49,7 +49,7 @@
                 <div class="col-md-5">
                     <%attr = {prompt: "Select group"}%>
                     <%attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id].to_i%>
-                    <%= f.collection_select :group_id, Group.all, :id, :name, attr, class: "form-control" %>
+                    <%= f.collection_select :group_id, current_user.groups.all, :id, :name, attr, class: "form-control" %>
                 </div>
                 <div class="col-md-3">
                     <a href="#" id="add-group-btn" class="btn btn-outline-secondary btn-block">Add Group</a>

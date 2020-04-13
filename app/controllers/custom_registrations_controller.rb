@@ -2,6 +2,6 @@ class CustomRegistrationsController < Devise::RegistrationsController
     protected
 
     def after_update_path_for(resource)
-        edit_user_registration_path
+        contacts_path
     end
 end

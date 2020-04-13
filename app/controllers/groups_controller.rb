@@ -1,7 +1,7 @@
 class GroupsController < ProtectedController
 
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
     if @group.save
       render json: @group, status: :created
     else
