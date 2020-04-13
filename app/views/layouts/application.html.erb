@@ -13,20 +13,7 @@
     <%= render "contacts/navbar"%>
     <main class="pt-4">
       <div class="container">
-          <% if !user_signed_in?%>
-            <%= yield %>
-          <%else%>
-            <div class="row">
-              <%= render "contacts/filter"%>
-            <div class="col-md-9">
-              <!-- /<p class="notice"><%= notice %></p> -->
-              <!-- /<p class="alert"><%= alert %></p> -->
-              <%= render "contacts/messages" if !flash.empty?%>
-              <div class="card">
-                <%= yield %>
-              </div>
-            </div>
-          <%end%>
+          <%= yield %>
         </div>
       </div>
     </main>
