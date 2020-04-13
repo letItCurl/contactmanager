@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
   root 'home#index'
-  devise_for :users
+  devise_for :users, controllers: {registrations: :custom_registrations}
   post 'groups/create'
   #get 'contacts/index', as: 'contacts'
   #get 'contacts/new', as: 'new_contact'
