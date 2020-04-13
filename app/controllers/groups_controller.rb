@@ -1,4 +1,5 @@
-class GroupsController < ApplicationController
+class GroupsController < ProtectedController
+
   def create
     @group = Group.new(group_params)
     if @group.save
@@ -13,5 +14,4 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name)
   end
-
 end

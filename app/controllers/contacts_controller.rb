@@ -1,5 +1,4 @@
-class ContactsController < ApplicationController
-
+class ContactsController < ProtectedController
   before_action :find_contact, only: [:edit, :update, :destroy]
 
   def index
@@ -61,4 +60,5 @@ class ContactsController < ApplicationController
   def previous_query_string
     session[:selected_group_id] ? { group_id: session[:selected_group_id]} : {}
   end
+
 end

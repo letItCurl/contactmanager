@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+  root 'home#index'
   devise_for :users
   post 'groups/create'
   #get 'contacts/index', as: 'contacts'
@@ -11,5 +13,4 @@ Rails.application.routes.draw do
     get 'autocomplete', on: :collection
   end
   
-  root 'contacts#index'
 end
