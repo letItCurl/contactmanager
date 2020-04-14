@@ -1,2 +1,28 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<div id="dashboard" class="carousel slide" data-ride="" >
+    <div class="carousel-inner" >
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="carousel-caption text-center mb-5">
+            <h1>You are in !</h1>
+            <p>You can start to use this tool</p>
+            <p><%= link_to "my contacts", contacts_path ,class: "btn btn-lg btn-primary"%></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Thank you and stay tuned !</h1>
+    <p class="lead">This web app will host new features soon...</p>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="featurette-divider">
+  <footer class="container">
+    <p class="float-right"><a href="#myCarousel">Back to top</a></p>
+    <p>© 2018-2020 RolandLPZ, Inc. · <a href="https://github.com/letItCurl/contactmanager">Github</a> · <a href="https://www.linkedin.com/in/roland-lopez-developer/">Linkedin</a></p>
+  </footer>
+</div>
