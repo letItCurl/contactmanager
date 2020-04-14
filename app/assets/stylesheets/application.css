@@ -13,9 +13,10 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui
+ *= require bootstrap
+ *= require @fortawesome/fontawesome-free
  */
- @import "bootstrap";
- @import '@fortawesome/fontawesome-free';
+
 
  @media (max-width: 780px) { 
     #contact-card {
