@@ -47,5 +47,20 @@
     height: 7px;
     background: blueviolet;
  }
-
+ .carousel-item{
+     height: 400px;
+     
+ }
+ #myCarousel{
+     background-color: black;
+ }
+ #myCarousel::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0), rgb(0, 0, 0)), url(https://i.pinimg.com/originals/44/55/8b/44558bcaa0cae2d7e17f80a2c3e29550.gif);
+    background-repeat: no-repeat;
+    opacity: 0.5;
+  }
 

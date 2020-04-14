@@ -1,37 +1,34 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" >
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class=""></li>
       <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="2" class=""></li>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner" >
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg>
         <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <div class="carousel-caption text-right">
+            <h1>whoaim</h1>
+            <p>I'm letItCurl, a freelance fullstack web developer on Ror / Vue / React / Docker </p>
+            <p><a class="btn btn-lg btn-primary" href="https://www.linkedin.com/in/roland-lopez-developer/" role="button">Linkedin</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg>
         <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+          <div class="carousel-caption text-right">
+            <h1>My Contacts</h1>
+            <p>A simple contact manager</p>
+            <p><%= link_to "Sing up!", new_user_session_path ,class: "btn btn-lg btn-primary"%></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"></rect></svg>
         <div class="container">
           <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            <h1>This is fully powered with rails !</h1>
+            <p>This app is hosted in heroku and the code in on github</p>
+            <p><a class="btn btn-lg btn-primary" href="https://github.com/letItCurl/contactmanager" role="button">Go to sources !</a></p>
           </div>
         </div>
       </div>
@@ -45,3 +42,37 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Losing of sigth important contacts ?</h1>
+    <p class="lead">This web app will help you to persiste your contacts in a easy and relaiable way.</p>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5 text-right">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid" width="300" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="row featurette text-right">
+      <div class="col-md-7 order-md-2 ">
+        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1 text-left" >
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+  <hr class="featurette-divider">
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>© 2018-2020 RolandLPZ, Inc. · <a href="https://github.com/letItCurl/contactmanager">Github</a> · <a href="https://www.linkedin.com/in/roland-lopez-developer/">Linkedin</a></p>
+  </footer>
+</div>
