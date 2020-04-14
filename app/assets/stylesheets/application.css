@@ -26,6 +26,19 @@
         margin: auto;
     }
  }
+ @media (max-width: 450px) { 
+    .container{
+        text-align: center !important;
+    }
+    .row.featurette.text-right{
+        text-align: center !important;
+    }
+    #gif{
+        text-align: center !important;
+        margin: auto;
+    }
+ }
+ 
  @media (max-width: 1000px) { 
     #responsive-from{
         flex-direction: column-reverse;
