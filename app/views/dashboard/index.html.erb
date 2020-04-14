@@ -3,7 +3,7 @@
       <div class="carousel-item active">
         <div class="container">
           <div class="carousel-caption text-center mb-5">
-            <h1>You are in !</h1>
+            <h1>You are in <%=current_user.name%> !</h1>
             <p>You can start to use this tool</p>
             <p><%= link_to "my contacts", contacts_path ,class: "btn btn-lg btn-primary"%></p>
           </div>

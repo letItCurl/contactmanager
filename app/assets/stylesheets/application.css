@@ -27,7 +27,7 @@
     }
  }
  @media (max-width: 450px) { 
-    .container{
+    #presentation{
         text-align: center !important;
     }
     .row.featurette.text-right{
@@ -44,7 +44,7 @@
         flex-direction: column-reverse;
     }
     #responsive-nav{
-        max-width: 82%;
+        max-width: 70%;
     }
     #responsive-pipe{
         display: none;
