@@ -34,7 +34,7 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 
 gem 'font_awesome5_rails'
 
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.2.1'
 
 gem 'shrine', '~> 3.2.0'
 
