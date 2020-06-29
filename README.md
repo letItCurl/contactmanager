@@ -1,5 +1,5 @@
 # CONTACT MANAGER RAILS APP
-> This is a CRM like app with basic CRUD on a Groups has many Contacts model 📠
+> This is a CRM like app with basic CRUD on a 'Groups has many Contacts' model 📠
 
 This app is made with love and ruby on rails 6 only.
 No front-end framework used, as the old times...
