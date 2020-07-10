@@ -1,4 +1,4 @@
-# CONTACT MANAGER RAILS APP
+# Contact manager in ruby on rails [![](https://img.shields.io/badge/autor-letItCurl-red.svg)](https://www.linkedin.com/in/roland-lopez-developer/?locale=en_US)
 > This is a CRM like app with basic CRUD on a 'Groups has many Contacts' model 📠
 
 This app is made with love and ruby on rails 6 only.
