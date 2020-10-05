@@ -36,7 +36,7 @@ gem 'font_awesome5_rails'
 
 gem 'kaminari', '~> 1.1.1'
 
-gem 'shrine', '~> 3.2.0'
+gem 'shrine', '~> 3.3.0'
 
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
